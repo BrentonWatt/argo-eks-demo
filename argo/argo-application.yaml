@@ -16,6 +16,6 @@ spec:
       valueFiles:
         - values.yaml
     path: helm-spring-boot-demo
-    repoURL: https://github.com/BrentonWatt/spring-eks-test.git
+    repoURL: https://github.com/BrentonWatt/argo-eks-demo.git
     targetRevision: master
   sourceType: Helm
