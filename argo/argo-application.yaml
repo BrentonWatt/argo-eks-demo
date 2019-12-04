@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  creationTimestamp: "2019-12-03T19:24:25Z"
+  name: bbdspringdemo
+  namespace: argo-cd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  syncPolicy:
+    automated: {}
+  source:
+    helm:
+      valueFiles:
+        - values.yaml
+    path: helm-spring-boot-demo
+    repoURL: https://github.com/BrentonWatt/spring-eks-test.git
+    targetRevision: master
+  sourceType: Helm
