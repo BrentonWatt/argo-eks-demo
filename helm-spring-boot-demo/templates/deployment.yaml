@@ -29,18 +29,16 @@ spec:
               containerPort: 8080
               protocol: TCP
           livenessProbe:
-            httpGet:
-              path: /actuator/health
-              port: http
+            tcpSocket:
+              port: 8080
             initialDelaySeconds: 240
             timeoutSeconds: 3
             periodSeconds: 30
             successThreshold: 1
             failureThreshold: 5
           readinessProbe:
-            httpGet:
-              path: /actuator/health
-              port: http
+            tcpSocket:
+              port: 8080
             initialDelaySeconds: 240
             timeoutSeconds: 3
             periodSeconds: 30
